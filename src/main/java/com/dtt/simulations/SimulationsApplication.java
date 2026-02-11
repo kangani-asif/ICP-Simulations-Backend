@@ -30,7 +30,7 @@ public class SimulationsApplication {
 
 			return "";
 		} catch (PKICoreServiceException e) {
-			e.printStackTrace();
+			// Exception caught, but not logged
 			return "";
 
 		}
