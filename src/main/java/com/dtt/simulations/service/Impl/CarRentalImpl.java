@@ -269,7 +269,7 @@ public class CarRentalImpl implements CarRentalIface {
             return AppUtil.createApiResponse(true,"Data Fetched Successfully",carRental);
 
         }catch (Exception e){
-            e.printStackTrace();
+            // Exception handled
             return  AppUtil.createApiResponse(false,"Something Went Wrong",null);
         }
     }
