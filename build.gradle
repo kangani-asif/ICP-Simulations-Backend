@@ -41,7 +41,7 @@ dependencies {
 		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
 	}
 	implementation 'org.springframework.boot:spring-boot-starter-undertow'
-	implementation 'com.itextpdf:itext7-core:7.1.17'
+	implementation 'com.itextpdf:itext7-core:7.2.0'
 
 	// Database
 	//implementation 'mysql:mysql-connector-java:8.0.33'
@@ -90,15 +90,18 @@ dependencies {
 	// Version constraints for transitive dependencies
 	constraints {
 		implementation 'org.yaml:snakeyaml:1.33.tuxcare.1'
-		implementation 'org.springframework:spring-core:6.0.25'
-		implementation 'org.springframework:spring-webmvc:6.1.22'
-		implementation 'org.springframework:spring-web:6.0.19'
-		implementation 'org.springframework:spring-beans:6.0.19'
-		implementation 'org.springframework:spring-expression:6.0.19'
-		implementation 'org.springframework:spring-context:6.0.19'
-		implementation 'ch.qos.logback:logback-core:1.4.12'
-		implementation 'ch.qos.logback:logback-classic:1.4.12'
+		implementation 'org.springframework:spring-core:6.2.11'
+		implementation 'org.springframework:spring-webmvc:6.2.11'
+		implementation 'org.springframework:spring-web:6.2.11'
+		implementation 'org.springframework:spring-beans:6.2.11'
+		implementation 'org.springframework:spring-expression:6.2.11'
+		implementation 'org.springframework:spring-context:6.2.11'
+		implementation 'org.springframework.boot:spring-boot:3.3.11'
+		implementation 'ch.qos.logback:logback-core:1.5.25'
+		implementation 'ch.qos.logback:logback-classic:1.5.25'
 		implementation 'org.springframework.boot:spring-boot-actuator:3.1.6'
+		implementation 'org.bouncycastle:bcprov-jdk15on:1.78'
+		implementation 'org.bouncycastle:bcpkix-jdk15on:1.79'
 	}
 }
 
