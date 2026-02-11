@@ -37,7 +37,7 @@ public class BuissinessAccountController {
             return buissinessAccountIface.saveBuissinessBankAccount(model);
         } catch (Exception e) {
             // TODO: handle exception
-            e.printStackTrace();
+            
             return AppUtil.createApiResponse(false,"Something went wrong",null);
         }
     }
