@@ -1,0 +1,116 @@
+plugins {
+	id 'java'
+
+	id 'org.springframework.boot' version '3.1.5'
+	id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = 'com.dtt'
+version = '0.0.1-SNAPSHOT'
+description = 'New Simulations'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springdocVersion', '2.2.0')
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation('org.springframework.boot:spring-boot-starter-web') {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+	}
+	implementation 'org.springframework.boot:spring-boot-starter-undertow'
+	implementation 'com.itextpdf:itext7-core:7.1.15'
+
+	// Database
+	//implementation 'mysql:mysql-connector-java:8.0.33'
+
+	implementation 'org.postgresql:postgresql:42.7.3'
+
+	implementation files("DAESLogIntegrity.jar")
+	implementation group: 'org.json', name: 'json', version: '20231013'
+	implementation "org.apache.httpcomponents:httpclient:4.5.14"
+	implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.5'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
+	// ===== NEW DEPENDENCIES FOR CONSENT MANAGEMENT API =====
+
+	// OpenAPI Documentation (Swagger UI)
+	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocVersion}"
+
+	// Actuator for health checks and monitoring
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// Jackson for JSON processing (already included in starter-web but explicit for date handling)
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+	// ===== OPTIONAL BUT RECOMMENDED =====
+
+	// Caching support
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation 'com.github.ben-manes.caffeine:caffeine:3.1.8'
+
+	// Security (if authentication is needed later)
+	// implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Testing dependencies
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.h2database:h2' // For testing
+
+	// ===== EXISTING DEPENDENCIES =====
+	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+	compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
+	implementation 'org.springframework.cloud:spring-cloud-starter-vault-config'
+	implementation 'org.springframework.vault:spring-vault-core'
+}
+
+// ===== NEW TASKS FOR CONSENT MANAGEMENT =====
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+// Task to show API documentation URL
+task showApiDocs {
+	description 'Show API documentation URL'
+	group 'help'
+
+	doLast {
+		println 'API Documentation available at:'
+		println 'Swagger UI: http://localhost:8080/swagger-ui.html'
+		println 'OpenAPI JSON: http://localhost:8080/api-docs'
+	}
+}
+
+ext {
+	springCloudVersion = "2023.0.3"
+}
+
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
