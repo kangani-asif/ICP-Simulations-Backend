@@ -717,7 +717,7 @@ public class BuissinessAccountImpl implements BuissinessAccountIface {
 
         }catch (JDBCConnectionException | ConstraintViolationException | DataException | LockAcquisitionException |
                 PessimisticLockException | QueryTimeoutException | SQLGrammarException | GenericJDBCException ex) {
-            ex.printStackTrace();
+            // Exception handling removed
             return AppUtil.createApiResponse(false, "Something went wrong", null);
         } catch (Exception e) {
             e.printStackTrace();
@@ -893,7 +893,7 @@ public class BuissinessAccountImpl implements BuissinessAccountIface {
             return AppUtil.createApiResponse(true, res.getMessage(), res.getResult());
 
         } catch (Exception e) {
-            e.printStackTrace();
+            
             return AppUtil.createApiResponse(false, "something went wrong", null);
         }
     }

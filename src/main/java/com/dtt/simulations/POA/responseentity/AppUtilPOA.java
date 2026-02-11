@@ -259,7 +259,7 @@ public class AppUtilPOA {
                     new TypeReference<Map<String, String>>() {});
             return map;
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            // Exception caught, but not handled
         }
         return null;
     }

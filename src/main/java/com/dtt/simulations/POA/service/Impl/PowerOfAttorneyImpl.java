@@ -1206,7 +1206,7 @@ public class PowerOfAttorneyImpl implements PowerOfAttorneyIface {
             return AppUtilPOA.createApiResponse(true, "Request Submitted successfully", null);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            // Exception handled silently
             return AppUtilPOA.createApiResponse(false,"something went wrong ",null);
 
         }

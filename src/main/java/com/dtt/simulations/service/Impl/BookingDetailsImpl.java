@@ -149,7 +149,7 @@ public class BookingDetailsImpl implements BookingDetailsIface {
             return AppUtil.createApiResponse(true,"All Records Fetched Successfully",hotelSimulatorRepo.allBookings());
 
         }catch(Exception e){
-            e.printStackTrace();
+            
             return AppUtil.createApiResponse(false,"something went wrong",null);
 
         }
