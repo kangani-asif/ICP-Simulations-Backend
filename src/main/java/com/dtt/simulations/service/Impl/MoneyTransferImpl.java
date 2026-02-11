@@ -192,7 +192,7 @@ public class MoneyTransferImpl implements MoneyTransferIface {
 
 
         }catch (Exception e){
-            e.printStackTrace();
+            
             return AppUtil.createApiResponse(false,"Something went wrong",null);
         }
     }

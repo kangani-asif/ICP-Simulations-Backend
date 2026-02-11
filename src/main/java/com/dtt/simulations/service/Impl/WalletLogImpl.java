@@ -36,7 +36,7 @@ public class WalletLogImpl implements WalletLogIface {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            // Exception handling removed
             return AppUtil.createApiResponse(false, "something went wrong", null);
 
         }

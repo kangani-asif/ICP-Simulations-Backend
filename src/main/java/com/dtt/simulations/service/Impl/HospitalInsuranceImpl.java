@@ -265,7 +265,7 @@ public class HospitalInsuranceImpl implements HospitalInsuranceIface {
                 }
             }
         }catch (Exception e){
-            e.printStackTrace();
+            // Exception caught and handled
         }
 
     }
