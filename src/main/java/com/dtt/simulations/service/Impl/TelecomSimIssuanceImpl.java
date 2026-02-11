@@ -176,7 +176,7 @@ public class TelecomSimIssuanceImpl implements TelecomSimIssuanceIface {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            // Exception handling removed
         }
 
     }

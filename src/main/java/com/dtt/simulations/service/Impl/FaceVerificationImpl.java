@@ -149,7 +149,7 @@ public class FaceVerificationImpl implements FaceVerificationIface {
             e.printStackTrace();
             return AppUtil.createApiResponse(false,"Something went wrong",null);
         }catch (Exception e){
-            e.printStackTrace();
+            
             return AppUtil.createApiResponse(false,"Something went wrong",null);
         }
 
