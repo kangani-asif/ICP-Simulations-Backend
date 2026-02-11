@@ -29,7 +29,7 @@ repositories {
 }
 
 ext {
-	set('springdocVersion', '2.2.0')
+	set('springdocVersion', '2.8.10')
 }
 
 dependencies {
