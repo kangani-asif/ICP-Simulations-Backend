@@ -90,6 +90,12 @@ dependencies {
 	// Version constraints for transitive dependencies
 	constraints {
 		implementation 'org.yaml:snakeyaml:1.33.tuxcare.1'
+		implementation 'org.springframework:spring-core:6.0.19'
+		implementation 'org.springframework:spring-webmvc:6.0.19'
+		implementation 'org.springframework:spring-web:6.0.19'
+		implementation 'org.springframework:spring-beans:6.0.19'
+		implementation 'org.springframework:spring-expression:6.0.19'
+		implementation 'org.springframework:spring-context:6.0.19'
 	}
 }
 
